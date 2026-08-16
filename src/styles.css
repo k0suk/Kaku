@@ -1,0 +1,59 @@
+:root { color: #282621; background: #f7f6f2; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+:root[data-theme="dark"] { color: #e7e5df; background: #1e1e1b; }
+@media (prefers-color-scheme: dark) { :root[data-theme="system"] { color: #e7e5df; background: #1e1e1b; } }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: inherit; color: inherit; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.app { display: grid; grid-template-columns: 220px minmax(0, 1fr) 220px; min-height: 100vh; background: inherit; }
+.sidebar, .outline { background: color-mix(in srgb, currentColor 4%, transparent); padding: 24px 16px; }
+.sidebar { border-right: 1px solid color-mix(in srgb, currentColor 13%, transparent); display: flex; flex-direction: column; }
+.outline { border-left: 1px solid color-mix(in srgb, currentColor 13%, transparent); }
+.brand { font-family: ui-serif, Georgia, serif; font-size: 22px; letter-spacing: .12em; margin: 2px 10px 28px; }
+.new-button { background: #5e7361; border: 0; border-radius: 7px; color: white; font-weight: 600; padding: 10px; width: 100%; }
+.section-label { color: color-mix(in srgb, currentColor 54%, transparent); font-size: 12px; letter-spacing: .08em; margin: 28px 8px 8px; }
+.article-link, .outline-title, .outline-item { background: transparent; border: 0; color: inherit; display: block; text-align: left; width: 100%; }
+.article-link { border-radius: 7px; padding: 10px 9px; }
+.article-link:hover, .article-link.active { background: color-mix(in srgb, #77917a 17%, transparent); }
+.article-link strong { display: block; font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.article-link span, .empty, .outline-empty { color: color-mix(in srgb, currentColor 54%, transparent); display: block; font-size: 11px; margin-top: 4px; }
+.sidebar-footer { background: transparent; border: 0; color: color-mix(in srgb, currentColor 65%, transparent); margin: auto 8px 0; padding: 12px 0; text-align: left; }
+.editor-shell { margin: 0 auto; max-width: 900px; padding: 20px 48px 28px; position: relative; width: 100%; }
+.toolbar { align-items: center; border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent); display: flex; gap: 7px; min-height: 45px; position: relative; }
+.format-buttons { display: flex; gap: 2px; }
+.format-buttons button, .quiet-button { background: transparent; border: 0; border-radius: 5px; color: color-mix(in srgb, currentColor 72%, transparent); font-size: 12px; padding: 6px 8px; }
+.format-buttons button:hover, .quiet-button:hover { background: color-mix(in srgb, currentColor 8%, transparent); color: inherit; }
+.save-state { color: color-mix(in srgb, currentColor 50%, transparent); font-size: 12px; margin-left: auto; transition: opacity .2s ease; }
+.save-state.saving { opacity: .75; }
+.settings-popover { background: #fffefa; border: 1px solid #d8d5cc; border-radius: 9px; box-shadow: 0 12px 36px rgba(0,0,0,.13); display: grid; gap: 5px; padding: 12px; position: absolute; right: 0; top: 40px; width: 220px; z-index: 2; }
+:root[data-theme="dark"] .settings-popover { background: #282824; border-color: #52514c; }
+.settings-popover label { color: color-mix(in srgb, currentColor 65%, transparent); display: grid; font-size: 11px; gap: 3px; }
+.settings-popover select, .settings-popover button { background: transparent; border: 0; color: inherit; padding: 7px 4px; text-align: left; }
+.settings-popover select { border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent); }
+.settings-popover button:hover { background: color-mix(in srgb, currentColor 7%, transparent); }
+.settings-popover .danger { color: #ad4c43; }
+.title-input { background: transparent; border: 0; color: inherit; font: 600 31px/1.35 ui-serif, Georgia, serif; margin: 38px 0 20px; outline: 0; padding: 0; width: 100%; }
+.title-input::placeholder, .editor:empty::before { color: color-mix(in srgb, currentColor 32%, transparent); }
+.editor { font: 18px/1.9 ui-serif, Georgia, "Hiragino Mincho ProN", serif; min-height: 55vh; outline: 0; padding-bottom: 32px; }
+.editor:empty::before { content: attr(data-placeholder); pointer-events: none; }
+.editor p { margin: 0 0 1.1em; }
+.editor h2 { font: 600 24px/1.5 ui-serif, Georgia, serif; margin: 2.1em 0 .65em; }
+.editor h3 { font: 600 20px/1.5 ui-serif, Georgia, serif; margin: 1.8em 0 .55em; }
+.editor blockquote { border-left: 3px solid #93a795; color: color-mix(in srgb, currentColor 76%, transparent); margin: 1.4em 0; padding-left: 1em; }
+.editor hr { border: 0; border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent); margin: 2.5em 0; }
+.meta { border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent); color: color-mix(in srgb, currentColor 53%, transparent); font-size: 12px; padding-top: 14px; }
+.outline h2 { font-size: 13px; font-weight: 600; margin: 4px 0 14px; }
+.outline-title { font-size: 13px; font-weight: 600; line-height: 1.45; padding: 6px 2px; }
+.outline-item { color: color-mix(in srgb, currentColor 68%, transparent); font-size: 12px; line-height: 1.45; padding: 7px 3px; }
+.outline-item.nested { padding-left: 15px; }
+.outline-item:hover { color: inherit; }
+.checklist { border-top: 1px solid color-mix(in srgb, currentColor 13%, transparent); margin-top: 28px; padding-top: 16px; }
+.checklist h3 { font-size: 12px; margin: 0 0 9px; }
+.checklist p { color: color-mix(in srgb, currentColor 60%, transparent); font-size: 12px; margin: 7px 0; }
+.is-focused { grid-template-columns: 0 minmax(0, 1fr) 0; }
+.is-focused .sidebar, .is-focused .outline { overflow: hidden; padding-left: 0; padding-right: 0; visibility: hidden; }
+.small .editor { font-size: 16px; }.large .editor { font-size: 20px; }.normal .editor { line-height: 1.65; }.wide .editor-shell { max-width: 1080px; }
+.reader { min-height: 100vh; padding: 30px; }.reader article { font: 18px/1.9 ui-serif, Georgia, serif; margin: 55px auto; max-width: 670px; }.reader article h1 { font: 600 36px/1.35 ui-serif, Georgia, serif; margin: 0 0 42px; }.reader article h2 { font: 600 25px/1.4 ui-serif, Georgia, serif; margin: 2.2em 0 .7em; }.reader article p { margin: 0 0 1.15em; }.reader-close { position: absolute; }
+@media (max-width: 850px) { .app { grid-template-columns: 185px minmax(0, 1fr); }.outline { display: none; }.editor-shell { padding: 20px 28px; } }
+@media (max-width: 620px) { .app { display: block; }.sidebar { display: none; }.editor-shell { padding: 14px 20px 24px; }.toolbar { gap: 2px; }.format-buttons button:nth-child(3), .format-buttons button:nth-child(4) { display: none; }.title-input { font-size: 27px; margin-top: 28px; }.editor { font-size: 17px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0s !important; } }
